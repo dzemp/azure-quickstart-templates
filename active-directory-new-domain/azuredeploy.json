@@ -49,7 +49,7 @@
         }
     },
     "variables": {
-        "virtualNetworkName": "adVNET",
+        "virtualNetworkName": "adVNet",
         "virtualNetworkAddressRange": "10.0.0.0/16",
         "adLBFE": "LBFE",
         "adLBBE": "LBBE",
