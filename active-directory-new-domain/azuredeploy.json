@@ -6,67 +6,67 @@
             "type": "string",
             "defaultValue": "adVM",
             "metadata": {
-                "description": "The name of the virtual machine uses as domain controller"
+                "description": "The name of the virtual machine uses as domain controller."
             }
         },
         "adminUsername": {
             "type": "string",
             "metadata": {
-                "description": "The name of the administrator account of the new VM and domain"
+                "description": "The name of the administrator account of the new VM and domain."
             }
         },
         "adminPassword": {
             "type": "securestring",
             "metadata": {
-                "description": "The password for the administrator account of the new VM and domain"
+                "description": "The password for the administrator account of the new VM and domain."
             }
         },
         "domainName": {
             "type": "string",
             "defaultValue": "customdomain.local",
             "metadata": {
-                "description": "The FQDN of the Active Directory Domain to be created"
+                "description": "The fully qualified domain name (FQDN) of the Active Directory domain to be created."
             }
         },
         "vnetName": {
             "type": "string",
             "defaultValue": "custom-vnet",
             "metadata": {
-                "description": "The name used for the virtual network"
+                "description": "The name used for the virtual network."
             }
         },
         "vnetIpAddressRange": {
             "type": "string",
             "defaultValue": "10.0.0.0/16",
             "metadata": {
-                "description": "The IPv4 IP address range used for the virtual network"
+                "description": "The IPv4 IP address range used for the virtual network."
             }
         },
         "subnetName": {
             "type": "string",
             "defaultValue": "shared-subnet",
             "metadata": {
-                "description": "The name used for the subnet hosting the VM"
+                "description": "The name used for the subnet hosting the VM."
             }
         },
         "subnetIpAddressRange": {
             "type": "string",
             "defaultValue": "10.0.1.0/24",
             "metadata": {
-                "description": "The IPv4 IP address range used for the subnet"
+                "description": "The IPv4 IP address range used for the subnet."
             }
         },
         "vmNicPrivateIpAddress":{
             "type": "string",
             "defaultValue": "10.0.1.4",
             "metadata": {
-                "description": "The static assigned IPv4 IP address for the VM network interface"
+                "description": "The static assigned IPv4 IP address for the VM network interface."
             }
         },
         "_artifactsLocation": {
             "type": "string",
             "metadata": {
-                "description": "The location of resources, such as templates and DSC modules, that the template depends on"
+                "description": "The location of resources, such as templates and DSC modules, that the template depends on."
             },
             "defaultValue": "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/active-directory-new-domain"
         },
