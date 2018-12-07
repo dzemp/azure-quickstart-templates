@@ -228,30 +228,28 @@
             ]
         },
         {
-            "type": "Microsoft.Network/virtualNetworks",
-            "name": "[parameters('vnetName')]",
-            "apiVersion": "2016-03-30",
-            "location": "[parameters('location')]",
+            "type": "Microsoft.Resources/deployments",
+            "name": "UpdateVNetDNS",
+            "apiVersion": "2016-02-01",
             "dependsOn": [
                 "[resourceId('Microsoft.Compute/virtualMachines/extensions', parameters('vmName'), 'CreateADForest')]"
             ],
             "properties": {
-                "addressSpace": {
-                    "addressPrefixes": [
-                        "[parameters('vnetIpAddressRange')]"
-                    ]
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "https://raw.githubusercontent.com/dzemp/azure-quickstart-templates/master/active-directory-new-domain/vnet-updated-dnsserver.json",
+                    "contentVersion": "1.0.0.0"
                 },
-                "dhcpOptions": {
-                    "dnsServers": "[parameters('vmNicPrivateIpAddress')]"
-                },
-                "subnets": [
-                    {
-                        "name": "[parameters('subnetName')]",
-                        "properties": {
-                            "addressPrefix": "[parameters('subnetIpAddressRange')]"
-                        }
+                "parameters": {
+                    "vnetName": {
+                        "value": "[parameters('vnetName')]"
+                    },
+                    "DNSServerAddress": {
+                        "value": [
+                            "[parameters('vmNicPrivateIpAddress')]"
+                        ]
                     }
-                ]
+                }
             }
         }
     ]
