@@ -237,12 +237,21 @@
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
-                    "uri": "https://raw.githubusercontent.com/dzemp/azure-quickstart-templates/master/active-directory-new-domain/vnet-updated-dnsserver.json",
+                    "uri": "https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/active-directory-new-domain/nestedtemplates/vnet-with-dns-server.json",
                     "contentVersion": "1.0.0.0"
                 },
                 "parameters": {
-                    "vnetName": {
+                    "virtualNetworkName": {
                         "value": "[parameters('vnetName')]"
+                    },
+                    "virtualNetworkAddressRange": {
+                        "value": "[parameters('vnetIpAddressRange')]"
+                    },
+                    "subnetName": {
+                        "value": "[parameters('subnetName')]"
+                    },
+                    "subnetRange": {
+                        "value": "[parameters('subnetIpAddressRange')]"
                     },
                     "DNSServerAddress": {
                         "value": [
